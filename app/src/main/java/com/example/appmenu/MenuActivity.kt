@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -22,6 +24,8 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var btnShowSnackbar: AppCompatButton
     private lateinit var btnClose: AppCompatButton
     private lateinit var btnShowHideText: AppCompatButton
+    private lateinit var tvHidden: TextView
+    var isHidden: Boolean = true
 
     private fun initComponents() {
         btnOpenActivity = findViewById(R.id.btnOpenActivity)
@@ -29,6 +33,7 @@ class MenuActivity : AppCompatActivity() {
         btnShowSnackbar = findViewById(R.id.btnShowSnackBar)
         btnClose = findViewById(R.id.btnClose)
         btnShowHideText = findViewById(R.id.btnShowHideText)
+        tvHidden = findViewById(R.id.tvHidden)
     }
 
     private fun initListeners() {
@@ -37,15 +42,28 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intentSA)
         }
         btnShowToast.setOnClickListener() {
-            Toast.makeText(this, "Soy un toast!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "¡Soy un toast! 🍞", Toast.LENGTH_LONG).show()
         }
         btnShowSnackbar.setOnClickListener() {
-            Snackbar.make(btnShowSnackbar, "Soy un snackbar!", Snackbar.LENGTH_SHORT)
+            Snackbar.make(btnShowSnackbar, "Hallo! Ich benutze WhatsApp. 👋👋👋", Snackbar.LENGTH_SHORT)
                 .setAction("X") {  }
                 .show()
         }
         btnClose.setOnClickListener() {
             finishAffinity()
+        }
+        btnShowHideText.setOnClickListener(){
+            setHidden()
+            isHidden = !isHidden
+        }
+
+    }
+
+    private fun setHidden() {
+        if(isHidden) {
+            tvHidden.visibility = View.VISIBLE
+        } else {
+            tvHidden.visibility = View.INVISIBLE
         }
     }
 

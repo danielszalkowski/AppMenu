@@ -15,15 +15,30 @@
         app:cardCornerRadius="16dp"
         >
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="HOLA, ESTA ES LA ACTIVIDAD SECUNDARIA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOLAAA, ESTA ES LA ACTIVIDAD SECUNDARIA
+                o(*￣▽￣*)ブ"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="50dp"
+                android:textSize="40dp"
                 android:textStyle="bold"></TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReturn"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_height="125dp"
+                android:background="@color/purple_500"
+                android:text="Volver :3"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
 
 
